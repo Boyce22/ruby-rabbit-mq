@@ -1,8 +1,8 @@
 # Name of your application. Used to uniquely configure containers.
-service: ruby_rabbit_mq
+service: ruby_users_rabbit_mq
 
 # Name of the container image.
-image: your-user/ruby_rabbit_mq
+image: your-user/ruby_users_rabbit_mq
 
 # Deploy to these servers.
 servers:

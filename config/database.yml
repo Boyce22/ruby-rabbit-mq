@@ -5,27 +5,27 @@ default: &default
 
 development:
   <<: *default
-  database: ruby_rabbit_mq_development
-  username: <%= ENV["RUBY_RABBIT_MQ_DATABASE_USER"] %>
-  password: <%= ENV["RUBY_RABBIT_MQ_DATABASE_PASSWORD"] %>
+  database: ruby_users_rabbit_mq_development
+  username: <%= ENV["RUBY_USERS_RABBIT_MQ_DATABASE_USER"] %>
+  password: <%= ENV["RUBY_USERS_RABBIT_MQ_DATABASE_PASSWORD"] %>
 
 test:
   <<: *default
-  database: ruby_rabbit_mq_test
-  username: <%= ENV["RUBY_RABBIT_MQ_DATABASE_USER"] %>
-  password: <%= ENV["RUBY_RABBIT_MQ_DATABASE_PASSWORD"] %>
+  database: ruby_users_rabbit_mq_test
+  username: <%= ENV["RUBY_USERS_RABBIT_MQ_DATABASE_USER"] %>
+  password: <%= ENV["RUBY_USERS_RABBIT_MQ_DATABASE_PASSWORD"] %>
 
 production:
   primary: &primary_production
     <<: *default
-    database: ruby_rabbit_mq_production
-    username: ruby_rabbit_mq
-    password: <%= ENV["RUBY_RABBIT_MQ_DATABASE_PASSWORD"] %>
+    database: ruby_users_rabbit_mq_production
+    username: <%= ENV["RUBY_USERS_RABBIT_MQ_DATABASE_USER"] %>
+    password: <%= ENV["RUBY_USERS_RABBIT_MQ_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
-    database: ruby_rabbit_mq_production_cache
+    database: ruby_users_rabbit_mq_production_cache
     migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
-    database: ruby_rabbit_mq_production_queue
+    database: ruby_users_rabbit_mq_production_queue
     migrations_paths: db/queue_migrate
